@@ -301,6 +301,39 @@ class ViewController: UIViewController {
         
     }
     
+    /**
+     * 执行动画方式09
+     * 关键帧动画
+     */
+    @IBAction func typeNine() {
+        
+        let layer = view01.layer
+        
+        // 关键帧动画类
+        let keyFrameAnimation = CAKeyframeAnimation(keyPath: "position")
+        
+        // 关键轨迹
+        let value01 = NSValue(CGPoint: layer.position)
+        let value02 = NSValue(CGPoint: CGPointMake(CGRectGetMaxX(layer.frame) + 100, layer.position.y))
+        let value03 = NSValue(CGPoint: CGPointMake(CGRectGetMaxX(layer.frame) + 100, CGRectGetMaxY(layer.frame) + 100))
+        let value04 = NSValue(CGPoint: CGPointMake(layer.position.x, CGRectGetMaxY(layer.frame) + 100))
+        let value05 = value01
+        
+        // 时间曲线
+        let tf01    = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        let tf02    = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let tf03    = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        let tf04    = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        
+        keyFrameAnimation.timingFunctions   = [tf01,tf02,tf03,tf04]
+        keyFrameAnimation.values            = [value01,value02,value03,value04,value05]
+        keyFrameAnimation.duration          = 3
+        keyFrameAnimation.autoreverses      = false
+        keyFrameAnimation.repeatCount       = MAXFLOAT
+        
+        layer.addAnimation(keyFrameAnimation, forKey: "keyFrameAnimation")
+    }
+    
     // MARK: - begin/commit animation delegate
     
     override func animationDidStart(anim: CAAnimation!) {
