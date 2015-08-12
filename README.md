@@ -3,3 +3,15 @@
 example01
 
 来源：麦子学院-IOS动画编程 http://www.maiziedu.com/course/ios/416-5311/
+
+v1.0
+
+->基本动画
+->使用UIViewAnimationOptions执行动画
+->使用Begin/Commit执行动画
+->Nest嵌套动画执行
+->操作子视图执行转场动画
+->替换子视图
+->隐式动画
+->放大缩小显示动画
+->关键帧动画
