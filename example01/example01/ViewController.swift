@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     var view03              : UIView!
     var view04              : UIView!
     
+    // MARK: -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +62,9 @@ class ViewController: UIViewController {
         view04                  = UIView(frame: CGRectMake(16, CGRectGetMaxY(view03.frame) + 16, 100, 100))
         view04.backgroundColor  = UIColor.grayColor()
         view.addSubview(view03)
+        
+        // 设置layer
+        addSublayer()
     }
     
     override func didReceiveMemoryWarning() {
@@ -130,6 +135,25 @@ class ViewController: UIViewController {
         self.view01Subview.center           = CGPointMake(CGRectGetMidX(view01.frame) - CGRectGetMinX(view01.frame), CGRectGetMidY(view01.frame) - CGRectGetMinY(view01.frame))
         self.view01Subview.backgroundColor  = UIColor.greenColor()
         self.view01Subview.alpha            = 0.5
+    }
+    
+    /**
+     * 增加一个layer
+     */
+    private func addSublayer() {
+        
+        let layer = CALayer()
+        layer.backgroundColor = UIColor.magentaColor().CGColor
+        layer.borderColor     = UIColor.grayColor().CGColor
+        layer.borderWidth     = 5
+        
+        layer.cornerRadius    = 10
+        layer.shadowColor     = UIColor.blackColor().CGColor
+        layer.shadowOpacity   = 0.5
+        layer.shadowOffset    = CGSizeMake(10, 10)
+        layer.frame           = CGRectMake(CGRectGetMaxX(view03.frame) + 16, CGRectGetMaxY(view01.frame) + 16, 100, 100)
+        
+        view.layer.addSublayer(layer)
     }
     
     // MARK: - 开始动画
