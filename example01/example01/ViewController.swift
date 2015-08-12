@@ -227,7 +227,7 @@ class ViewController: UIViewController {
      */
     @IBAction func typeSix() {
         
-        UIView.transitionFromView(view03, toView: view04, duration: 3, options: UIViewAnimationOptions.TransitionCrossDissolve { (finished) -> Void in
+        UIView.transitionFromView(view03, toView: view04, duration: 3, options: UIViewAnimationOptions.TransitionCrossDissolve) { (finished) -> Void in
             
             println("view04 replace view03 是否完成：\(finished)")
         }
