@@ -1,5 +1,9 @@
 # learniosanimation
 
+环境：
+
+xcode-6.3.2 swift-1.2
+
 example01
 
 来源：麦子学院-IOS动画编程 http://www.maiziedu.com/course/ios/416-5311/
