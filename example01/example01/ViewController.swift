@@ -32,6 +32,9 @@ class ViewController: UIViewController {
     var view03              : UIView!
     var view04              : UIView!
     
+    // 子layer
+    var layer               : CALayer!
+    
     // MARK: -
     
     override func viewDidLoad() {
@@ -110,6 +113,9 @@ class ViewController: UIViewController {
             }
         }
         
+        // 恢复layer
+        layer.frame = CGRectMake(CGRectGetMaxX(view03.frame) + 16, CGRectGetMaxY(view01.frame) + 16, 100, 100)
+        
     }
     
     // MARK: - 操作视图
@@ -142,7 +148,7 @@ class ViewController: UIViewController {
      */
     private func addSublayer() {
         
-        let layer = CALayer()
+        layer = CALayer()
         layer.backgroundColor = UIColor.magentaColor().CGColor
         layer.borderColor     = UIColor.grayColor().CGColor
         layer.borderWidth     = 5
@@ -255,6 +261,15 @@ class ViewController: UIViewController {
             
             println("view04 replace view03 是否完成：\(finished)")
         }
+    }
+    
+    /** 
+     * 执行动画方式07
+     * 隐式动画
+     */
+    @IBAction func typeSeven() {
+        
+        layer.position.y += 116
     }
     
     // MARK: - begin/commit animation delegate
