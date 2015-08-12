@@ -31,13 +31,8 @@ class ViewController: UIViewController {
      */
     @IBAction func startAnimation() {
         
-        UIView.animateWithDuration(2, animations: { () -> Void in
-            
-            self.view01.center          = self.view.center
-            self.view01.backgroundColor = UIColor.magentaColor()
-            self.view01.transform       = CGAffineTransformMakeScale(2, 2)
-            self.view01.alpha           = 0.5
-        })
+//        typeOne()
+        typeTwo()
     }
     
     /**
@@ -52,6 +47,39 @@ class ViewController: UIViewController {
         self.view01.transform   = CGAffineTransformMakeScale(1, 1)
         view01.alpha            = 1
         
+    }
+    
+    /**
+     * 执行动画方式01
+     * 基本动画
+     */
+    private func typeOne() {
+        
+        UIView.animateWithDuration(2, animations: { () -> Void in
+            
+            self.view01.center          = self.view.center
+            self.view01.backgroundColor = UIColor.magentaColor()
+            self.view01.transform       = CGAffineTransformMakeScale(2, 2)
+            self.view01.alpha           = 0.5
+        })
+    }
+    
+    /**
+     * 执行动画方式02
+     * 使用UIViewAnimationOptions执行动画
+     */
+    private func typeTwo() {
+        
+        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+            
+            self.view01.center          = self.view.center
+            self.view01.backgroundColor = UIColor.magentaColor()
+            self.view01.transform       = CGAffineTransformMakeScale(2, 2)
+            self.view01.alpha           = 0.5
+        }) { (finished) -> Void in
+            
+            println("是否完成：\(finished)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
