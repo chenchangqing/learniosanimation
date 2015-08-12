@@ -6,7 +6,7 @@ example01
 
 v1.0
 
-->基本动画
+->基本动画\n
 ->使用UIViewAnimationOptions执行动画
 ->使用Begin/Commit执行动画
 ->Nest嵌套动画执行
