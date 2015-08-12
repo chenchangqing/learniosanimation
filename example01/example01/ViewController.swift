@@ -114,6 +114,7 @@ class ViewController: UIViewController {
         }
         
         // 恢复layer
+        layer.removeAllAnimations()
         layer.frame = CGRectMake(CGRectGetMaxX(view03.frame) + 16, CGRectGetMaxY(view01.frame) + 16, 100, 100)
         
     }
@@ -270,6 +271,34 @@ class ViewController: UIViewController {
     @IBAction func typeSeven() {
         
         layer.position.y += 116
+    }
+    
+    /**
+     * 执行动画方式08
+     * 放大缩小显示动画
+     */
+    @IBAction func typeEight() {
+        
+        // 放大缩小动画类
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.fromValue    = 1
+        scaleAnimation.toValue      = 1.5
+        scaleAnimation.autoreverses = true
+        scaleAnimation.repeatCount  = MAXFLOAT
+        scaleAnimation.duration     = 2
+        
+        // 透明度动画类
+        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+        opacityAnimation.fromValue      = 0.0
+        opacityAnimation.toValue        = 1.0
+        opacityAnimation.autoreverses   = true
+        opacityAnimation.repeatCount    = MAXFLOAT
+        opacityAnimation.duration       = 2
+        
+        // 增加动画
+        layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+        layer.addAnimation(opacityAnimation, forKey: "opacityAnimation")
+        
     }
     
     // MARK: - begin/commit animation delegate
