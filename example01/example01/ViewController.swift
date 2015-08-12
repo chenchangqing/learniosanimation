@@ -325,6 +325,9 @@ class ViewController: UIViewController {
         let tf03    = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         let tf04    = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
+        // 轨迹时间
+        keyFrameAnimation.keyTimes          = [0.0,0.5,0.6,0.7,1]
+        
         keyFrameAnimation.timingFunctions   = [tf01,tf02,tf03,tf04]
         keyFrameAnimation.values            = [value01,value02,value03,value04,value05]
         keyFrameAnimation.duration          = 3
