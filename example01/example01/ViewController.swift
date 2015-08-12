@@ -32,7 +32,8 @@ class ViewController: UIViewController {
     @IBAction func startAnimation() {
         
 //        typeOne()
-        typeTwo()
+//        typeTwo()
+        typeThree()
     }
     
     /**
@@ -80,6 +81,28 @@ class ViewController: UIViewController {
             
             println("是否完成：\(finished)")
         }
+    }
+    
+    /** 
+     * 执行动画方式03
+     * 使用Begin/Commit执行动画
+     */
+    private func typeThree() {
+        
+        // 开始动画并设置动画属性
+        UIView.beginAnimations("begincommitAnimation", context: nil)
+        UIView.setAnimationDuration(2)
+        UIView.setAnimationRepeatAutoreverses(true)
+        UIView.setAnimationRepeatCount(MAXFLOAT)
+        
+        // 操作视图
+        self.view01.center          = self.view.center
+        self.view01.backgroundColor = UIColor.magentaColor()
+        self.view01.transform       = CGAffineTransformMakeScale(2, 2)
+        self.view01.alpha           = 0.5
+        
+        // 提交动画
+        UIView.commitAnimations()
     }
 
     override func didReceiveMemoryWarning() {
