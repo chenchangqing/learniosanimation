@@ -28,6 +28,10 @@ class ViewController: UIViewController {
     let view02OriginalColor = UIColor.magentaColor()
     var view02OriginalCenter: CGPoint!
     
+    // 视图03,04
+    var view03              : UIView!
+    var view04              : UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +52,14 @@ class ViewController: UIViewController {
         view02.backgroundColor  = view02OriginalColor
         view02OriginalCenter    = view02.center
         view.addSubview(view02)
+        
+        // 设置view03,04
+        view03                  = UIView(frame: CGRectMake(16, CGRectGetMaxY(view01.frame) + 16, 100, 100))
+        view03.backgroundColor  = UIColor.greenColor()
+        
+        view04                  = UIView(frame: CGRectMake(16, CGRectGetMaxY(view03.frame) + 16, 100, 100))
+        view04.backgroundColor  = UIColor.grayColor()
+        view.addSubview(view03)
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,6 +94,16 @@ class ViewController: UIViewController {
         self.view01Subview.center           = view01SubviewOriginalCenter
         self.view01Subview.backgroundColor  = view01SubviewOriginalColor
         self.view01Subview.alpha            = 1
+        
+        // 恢复view03
+        for view in self.view.subviews {
+            
+            if view as! NSObject == view04 {
+                
+                view04.removeFromSuperview()
+                self.view.addSubview(view03)
+            }
+        }
         
     }
     
@@ -196,6 +218,18 @@ class ViewController: UIViewController {
         }) { (finished) -> Void in
             
             println("view01SubviewOperation是否完成：\(finished)")
+        }
+    }
+    
+    /**
+     * 执行动画方式06
+     * 替换子视图
+     */
+    @IBAction func typeSix() {
+        
+        UIView.transitionFromView(view03, toView: view04, duration: 3, options: UIViewAnimationOptions.TransitionCrossDissolve { (finished) -> Void in
+            
+            println("view04 replace view03 是否完成：\(finished)")
         }
     }
     

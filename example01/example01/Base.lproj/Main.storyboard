@@ -44,6 +44,11 @@
                                 <action selector="typeFive" destination="vXZ-lx-hvc" id="IZE-5E-He0"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="06" id="tCb-aA-nyr">
+                            <connections>
+                                <action selector="typeSix" destination="vXZ-lx-hvc" id="yDD-YN-EqF"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem title="end" id="1BR-e2-7OQ">
                             <connections>
                                 <action selector="endAnimation" destination="vXZ-lx-hvc" id="2tD-l8-Ww5"/>
