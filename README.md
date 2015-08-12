@@ -25,3 +25,10 @@ v1.0
 ->放大缩小显示动画
 
 ->关键帧动画
+
+----- ----- ----- example02 ----- ----- -----
+
+来源：iOS 中 CALayer 的使用 http://www.jikexueyuan.com/course/397.html
+
+v2.0：用 CALayer 定制下载进度条控件
+
