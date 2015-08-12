@@ -11,9 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     // 视图01
-    var view01              :UIView!
+    var view01              : UIView!
     let view01OriginalRect  = CGRectMake(16, 32, 100, 100)
     let view01OriginalColor = UIColor.redColor()
+    var view01OriginalCenter: CGPoint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         // 设置view01
         view01                  = UIView(frame: view01OriginalRect)
         view01.backgroundColor  = view01OriginalColor
+        view01OriginalCenter    = view01.center
         view.addSubview(view01)
     }
     
@@ -29,12 +31,12 @@ class ViewController: UIViewController {
      */
     @IBAction func startAnimation() {
         
-        UIView.animateWithDuration(5, animations: { () -> Void in
+        UIView.animateWithDuration(2, animations: { () -> Void in
             
-            self.view01.frame.origin.y += 200
-            self.view01.frame.origin.x += 100
+            self.view01.center          = self.view.center
             self.view01.backgroundColor = UIColor.magentaColor()
-            self.view01.bounds          = CGRectMake(0, 0, 200, 200)
+            self.view01.transform       = CGAffineTransformMakeScale(2, 2)
+            self.view01.alpha           = 0.5
         })
     }
     
@@ -44,9 +46,12 @@ class ViewController: UIViewController {
     @IBAction func endAnimation() {
         
         view01.layer.removeAllAnimations()
-        view01.frame            = view01OriginalRect
+        
+        view01.center           = view01OriginalCenter
         view01.backgroundColor  = view01OriginalColor
-        view01.bounds           = CGRectMake(0, 0, 100, 100)
+        self.view01.transform   = CGAffineTransformMakeScale(1, 1)
+        view01.alpha            = 1
+        
     }
 
     override func didReceiveMemoryWarning() {
