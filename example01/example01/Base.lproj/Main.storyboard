@@ -19,14 +19,34 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="开始动画" id="sic-Mv-vdZ">
+                        <barButtonItem title="01" id="QNs-WB-Coh">
                             <connections>
-                                <action selector="startAnimation" destination="vXZ-lx-hvc" id="WkR-0c-pV0"/>
+                                <action selector="typeOne" destination="vXZ-lx-hvc" id="se8-Bf-umv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="结束动画" id="F2x-Sg-uNR">
+                        <barButtonItem title="02" id="wB4-3I-eBg">
                             <connections>
-                                <action selector="endAnimation" destination="vXZ-lx-hvc" id="MyK-oU-SAU"/>
+                                <action selector="typeTwo" destination="vXZ-lx-hvc" id="YHm-1e-3nF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="03" id="Zy3-22-0bC">
+                            <connections>
+                                <action selector="typeThree" destination="vXZ-lx-hvc" id="GEZ-cb-5S5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="04" id="QYL-oD-arc">
+                            <connections>
+                                <action selector="typeFour" destination="vXZ-lx-hvc" id="MKo-NN-HJG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="05" id="CFf-jd-Bd0">
+                            <connections>
+                                <action selector="typeFive" destination="vXZ-lx-hvc" id="IZE-5E-He0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="end" id="1BR-e2-7OQ">
+                            <connections>
+                                <action selector="endAnimation" destination="vXZ-lx-hvc" id="2tD-l8-Ww5"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
