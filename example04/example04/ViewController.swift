@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 
     private var gradientLayer   : CAGradientLayer!  // 测试CAGradientLayer坐标系
     
+    private var axela           : UIImageView!      // 汽车
+    private var axelaLayer      : CAGradientLayer!  // 汽车遮罩
+    private var axeTimer        : NSTimer!
+    
     // MARK: -
     
     override func viewDidLoad() {
@@ -25,6 +29,10 @@ class ViewController: UIViewController {
             // 改变graditentLayer的分割点
             self.gradientLayer.locations = [0.01,0.5,0.99]
         }
+        
+        // 定时执行axela汽车的遮罩动画
+        axeTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("changeAxelaMask"), userInfo: nil, repeats: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +45,9 @@ class ViewController: UIViewController {
         
         // 设置gradientLayer
         setup01()
+        
+        // 设置汽车
+        setup02()
     }
     
     // MARK: - CAGradientLayer坐标系相关
@@ -45,7 +56,7 @@ class ViewController: UIViewController {
         
         // 创建并初始化
         gradientLayer               = CAGradientLayer()
-        gradientLayer.frame         = CGRectMake(16, 36, CGRectGetWidth(view.bounds) - 32, 50)
+        gradientLayer.frame         = CGRectMake(16, 36, CGRectGetWidth(view.bounds) - 32, 30)
         gradientLayer.borderWidth   = 1
         
         view.layer.addSublayer(gradientLayer)
@@ -60,6 +71,40 @@ class ViewController: UIViewController {
         // 设置颜色分割点
         gradientLayer.locations = [0.25,0.5,0.75]
         
+    }
+    
+    // MARK: - 给汽车增加遮罩层
+    
+    private func setup02() {
+        
+        // 创建UIImageView
+        axela       = UIImageView(frame: CGRectMake(16, CGRectGetMaxY(gradientLayer.frame) + 16, CGRectGetWidth(gradientLayer.frame), CGRectGetWidth(gradientLayer.frame) * (2/3)))
+        axela.image = UIImage(named: "axela.jpg")
+        view.addSubview(axela)
+        
+        // 初始化渐变层
+        axelaLayer          = CAGradientLayer()
+        axelaLayer.frame    = axela.bounds
+        axela.layer.addSublayer(axelaLayer)
+        
+        // 设定颜色渐变方向
+        axelaLayer.startPoint   = CGPointMake(0, 0)
+        axelaLayer.endPoint     = CGPointMake(0, 1)
+        
+        // 设定颜色组
+        axelaLayer.colors = [UIColor.clearColor().CGColor,UIColor.redColor().CGColor]
+        
+        // 设定颜色分割点
+        axelaLayer.locations = [0.5, 1]
+    }
+    
+    func changeAxelaMask() {
+        
+        // 设定颜色组动画
+        axelaLayer.colors = [UIColor.clearColor().CGColor, UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1).CGColor]
+        
+        // 设定颜色分割点动画
+        axelaLayer.locations = [CGFloat(arc4random()%10)/10, 1]
     }
 
 }

@@ -13,6 +13,7 @@
 		E61408371B7C8C2A0090B4BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E61408361B7C8C2A0090B4BA /* Images.xcassets */; };
 		E614083A1B7C8C2A0090B4BA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61408381B7C8C2A0090B4BA /* LaunchScreen.xib */; };
 		E61408461B7C8C2A0090B4BA /* example04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61408451B7C8C2A0090B4BA /* example04Tests.swift */; };
+		E61408501B7C94A00090B4BA /* axela.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E614084F1B7C94A00090B4BA /* axela.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		E614083F1B7C8C2A0090B4BA /* example04Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example04Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61408441B7C8C2A0090B4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E61408451B7C8C2A0090B4BA /* example04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example04Tests.swift; sourceTree = "<group>"; };
+		E614084F1B7C94A00090B4BA /* axela.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = axela.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		E614082D1B7C8C2A0090B4BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E614084F1B7C94A00090B4BA /* axela.jpg */,
 				E614082E1B7C8C2A0090B4BA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -195,6 +198,7 @@
 				E61408351B7C8C2A0090B4BA /* Main.storyboard in Resources */,
 				E614083A1B7C8C2A0090B4BA /* LaunchScreen.xib in Resources */,
 				E61408371B7C8C2A0090B4BA /* Images.xcassets in Resources */,
+				E61408501B7C94A00090B4BA /* axela.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
