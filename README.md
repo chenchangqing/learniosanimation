@@ -47,3 +47,7 @@ v3.1：使用CAShapeLayer结合UIBezierPath绘制椭圆、正圆、矩形
 v3.2：使用CAShapeLayer完成随机进度条的动画效果
 
 v3.3：使用CAShapeLayer完成ProgressCircleView自定义圆形进度条控件
+
+----- ----- ----- example04 ----- ----- -----
+
+来源：iOS 中 CAGradientLayer 的使用 http://www.jikexueyuan.com/course/546_4.html
