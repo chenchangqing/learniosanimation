@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     private var progressLayer   : CAShapeLayer! // 圆形进度条
     private var timer2          : NSTimer!      // 时间控制
     
+    private var progressView    : ProgressCircleView!    // 圆形进度条控件
+    
 
     // MARK: -
     
@@ -37,6 +39,12 @@ class ViewController: UIViewController {
         // 圆形进度条定制执行动画
         timer2 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("animationEventTypeOne"), userInfo: nil, repeats: true)
         timer2 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("animationEventTypeTwo"), userInfo: nil, repeats: true)
+        
+        // 延时1秒
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue()) { () -> Void in
+            
+            self.progressView.value = 1
+        }
         
     }
     
@@ -58,6 +66,9 @@ class ViewController: UIViewController {
         
         // 设置圆形进度条
         setup03()
+        
+        // 设置圆形进度条（使用ProgressCircleView）
+        setup04()
     }
     
     // MARK: - 五角星相关
@@ -215,10 +226,10 @@ class ViewController: UIViewController {
         
         // 创建CAShapeLayer
         progressLayer       = CAShapeLayer()
-        progressLayer.frame = CGRectMake(16, CGRectGetMaxY(circleLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        progressLayer.frame = CGRectMake(16, CGRectGetMaxY(circleLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 100)
         
         // 创建圆形贝塞尔曲线
-        let oval = UIBezierPath(ovalInRect: CGRectMake(0, 0, 50, 50))
+        let oval = UIBezierPath(ovalInRect: CGRectMake(0, 0, 100, 100))
         
         // 修改CAShapeLayer的线条相关值
         progressLayer.fillColor         = UIColor.clearColor().CGColor
@@ -252,6 +263,21 @@ class ViewController: UIViewController {
         
         progressLayer.strokeStart = valueOne < valuTwo ? valueOne : valuTwo
         progressLayer.strokeEnd   = valueOne > valuTwo ? valueOne : valuTwo
+    }
+    
+    // MARK: - 圆形进度条控件
+    
+    /**
+     * 设置圆形进度条控件
+     */
+    private func setup04() {
+        
+        progressView            = ProgressCircleView(frame: CGRectMake(16, CGRectGetMaxY(progressLayer.frame) + 16, 100, 100))
+        progressView.value      = 0.75
+        progressView.lineWidth  = 2
+        progressView.lineColor  = UIColor.purpleColor()
+        
+        view.addSubview(progressView)
     }
 
 }

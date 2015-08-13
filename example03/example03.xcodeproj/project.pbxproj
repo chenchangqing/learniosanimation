@@ -13,6 +13,7 @@
 		E648C94C1B7C477600389B03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E648C94B1B7C477600389B03 /* Images.xcassets */; };
 		E648C94F1B7C477600389B03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E648C94D1B7C477600389B03 /* LaunchScreen.xib */; };
 		E648C95B1B7C477600389B03 /* example03Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E648C95A1B7C477600389B03 /* example03Tests.swift */; };
+		E648C9651B7C66D200389B03 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E648C9641B7C66D200389B03 /* ProgressCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		E648C9541B7C477600389B03 /* example03Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example03Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E648C9591B7C477600389B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E648C95A1B7C477600389B03 /* example03Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example03Tests.swift; sourceTree = "<group>"; };
+		E648C9641B7C66D200389B03 /* ProgressCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				E648C94B1B7C477600389B03 /* Images.xcassets */,
 				E648C94D1B7C477600389B03 /* LaunchScreen.xib */,
 				E648C9421B7C477600389B03 /* Supporting Files */,
+				E648C9641B7C66D200389B03 /* ProgressCircleView.swift */,
 			);
 			path = example03;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E648C9471B7C477600389B03 /* ViewController.swift in Sources */,
+				E648C9651B7C66D200389B03 /* ProgressCircleView.swift in Sources */,
 				E648C9451B7C477600389B03 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +415,7 @@
 				E648C9601B7C477600389B03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E648C9611B7C477600389B03 /* Build configuration list for PBXNativeTarget "example03Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				E648C9631B7C477600389B03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

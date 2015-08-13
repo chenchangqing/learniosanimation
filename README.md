@@ -44,4 +44,6 @@ v3.0：使用CAShapeLayer完成五角星动画
 
 v3.1：使用CAShapeLayer结合UIBezierPath绘制椭圆、正圆、矩形
 
-v3.2：使用CAShapelayer完成随机进度条的动画效果
+v3.2：使用CAShapeLayer完成随机进度条的动画效果
+
+v3.3：使用CAShapeLayer完成ProgressCircleView自定义圆形进度条控件
