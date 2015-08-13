@@ -41,3 +41,5 @@ v2.2：使用CALayer的mask属性实现图片遮罩效果层
 来源：iOS 中 CAShapeLayer 的使用 http://www.jikexueyuan.com/course/456_1.html
 
 v3.0：使用CAShapeLayer完成五角星动画
+
+v3.1：使用CAShapeLayer结合UIBezierPath绘制椭圆、正圆、矩形
