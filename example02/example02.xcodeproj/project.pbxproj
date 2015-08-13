@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E648C92E1B7C365800389B03 /* 结束图片@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E648C92C1B7C365800389B03 /* 结束图片@2x.png */; };
+		E648C92F1B7C365800389B03 /* 起始图片@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E648C92D1B7C365800389B03 /* 起始图片@2x.png */; };
+		E648C9311B7C373E00389B03 /* FadeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E648C9301B7C373E00389B03 /* FadeImageView.swift */; };
 		E679402C1B7B9B4B00520C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679402B1B7B9B4B00520C03 /* AppDelegate.swift */; };
 		E679402E1B7B9B4B00520C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679402D1B7B9B4B00520C03 /* ViewController.swift */; };
 		E67940311B7B9B4B00520C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E679402F1B7B9B4B00520C03 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E648C92C1B7C365800389B03 /* 结束图片@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "结束图片@2x.png"; sourceTree = "<group>"; };
+		E648C92D1B7C365800389B03 /* 起始图片@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "起始图片@2x.png"; sourceTree = "<group>"; };
+		E648C9301B7C373E00389B03 /* FadeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeImageView.swift; sourceTree = "<group>"; };
 		E67940261B7B9B4B00520C03 /* example02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E679402A1B7B9B4B00520C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E679402B1B7B9B4B00520C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 				E67940341B7B9B4B00520C03 /* LaunchScreen.xib */,
 				E67940291B7B9B4B00520C03 /* Supporting Files */,
 				E679404B1B7B9FB900520C03 /* ProgressView.swift */,
+				E648C9301B7C373E00389B03 /* FadeImageView.swift */,
 			);
 			path = example02;
 			sourceTree = "<group>";
@@ -93,6 +100,8 @@
 		E67940291B7B9B4B00520C03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E648C92C1B7C365800389B03 /* 结束图片@2x.png */,
+				E648C92D1B7C365800389B03 /* 起始图片@2x.png */,
 				E679402A1B7B9B4B00520C03 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -195,9 +204,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E648C92F1B7C365800389B03 /* 起始图片@2x.png in Resources */,
 				E67940311B7B9B4B00520C03 /* Main.storyboard in Resources */,
 				E67940361B7B9B4B00520C03 /* LaunchScreen.xib in Resources */,
 				E67940331B7B9B4B00520C03 /* Images.xcassets in Resources */,
+				E648C92E1B7C365800389B03 /* 结束图片@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E648C9311B7C373E00389B03 /* FadeImageView.swift in Sources */,
 				E679402E1B7B9B4B00520C03 /* ViewController.swift in Sources */,
 				E679402C1B7B9B4B00520C03 /* AppDelegate.swift in Sources */,
 				E679404C1B7B9FB900520C03 /* ProgressView.swift in Sources */,
@@ -417,6 +429,7 @@
 				E67940471B7B9B4B00520C03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E67940481B7B9B4B00520C03 /* Build configuration list for PBXNativeTarget "example02Tests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +438,7 @@
 				E679404A1B7B9B4B00520C03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -32,3 +32,4 @@ v1.0
 
 v2.0：用 CALayer 定制下载进度条控件
 
+v2.1：UIImageView淡入淡出切换图片效果

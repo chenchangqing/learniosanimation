@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var view01          : UIView!
-    private var sublayer        : CALayer!
-    private var progressView    : ProgressView!
-    private var timer           : NSTimer!
+    private var view01          : UIView!               // 进度条01
+    private var sublayer        : CALayer!              // 进度条01的sublayer
+    private var progressView    : ProgressView!         // 进度条控件
+    private var timer           : NSTimer!              // 时间类
+    private var imageView       : FadeImageView!        // 淡入淡出控件
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +47,26 @@ class ViewController: UIViewController {
         progressView = ProgressView(frame: CGRectMake(16, CGRectGetMaxY(view01.frame) + 16, CGRectGetWidth(view.frame) - 32, 3))
         view.addSubview(progressView)
         
+        // 初始化imageView
+        imageView = FadeImageView(frame: CGRectMake(16, CGRectGetMaxY(progressView.frame) + 16, CGRectGetWidth(view.frame) - 32, 200))
+        imageView.image = UIImage(named: "起始图片")
+        view.addSubview(imageView)
     }
     
     /**
-     * progressView原理
+     * 延迟1秒执行
      */
     private func progressView01() {
         
         // 延迟3秒执行隐式动画
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 3)), dispatch_get_main_queue(), { () -> Void in
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
             
+            // 改变进度条01的进度
             self.sublayer.frame = CGRectMake(0, 0, 100, 3)
             self.sublayer.backgroundColor = UIColor.purpleColor().CGColor
+            
+            // 改变imageView的图片
+            self.imageView.image = UIImage(named: "结束图片")
         })
     }
     
