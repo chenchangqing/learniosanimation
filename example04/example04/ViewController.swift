@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         // 修改遮罩控件属性
         colorView.percent   = CGFloat(arc4random() % 10) / 10
         colorView.color     = UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1)
-        println(Int(arc4random() % 4))
+        // println(Int(arc4random() % 4))
         colorView.direction = EColorDirection(rawValue: Int(arc4random() % 4))!
         
     }
