@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     private var axelaLayer      : CAGradientLayer!  // 汽车遮罩
     private var axeTimer        : NSTimer!
     
+    private var colorView       : ColorUIImageView! // 自定义遮罩控件
+    
     // MARK: -
     
     override func viewDidLoad() {
@@ -48,6 +50,25 @@ class ViewController: UIViewController {
         
         // 设置汽车
         setup02()
+        
+        // 设置遮罩控件
+        setup03()
+    }
+    
+    func changeAxelaMask() {
+        
+        // 设定颜色组动画
+        axelaLayer.colors = [UIColor.clearColor().CGColor, UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1).CGColor]
+        
+        // 设定颜色分割点动画
+        axelaLayer.locations = [CGFloat(arc4random()%10)/10, 1]
+        
+        // 修改遮罩控件属性
+        colorView.percent   = CGFloat(arc4random() % 10) / 10
+        colorView.color     = UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1)
+        println(Int(arc4random() % 4))
+        colorView.direction = EColorDirection(rawValue: Int(arc4random() % 4))!
+        
     }
     
     // MARK: - CAGradientLayer坐标系相关
@@ -98,13 +119,14 @@ class ViewController: UIViewController {
         axelaLayer.locations = [0.5, 1]
     }
     
-    func changeAxelaMask() {
+    // MARK: - 使用ColorUIImageView自定义遮罩控件
+    
+    private func setup03() {
         
-        // 设定颜色组动画
-        axelaLayer.colors = [UIColor.clearColor().CGColor, UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1).CGColor]
+        colorView = ColorUIImageView(frame: CGRectMake(16, CGRectGetMaxY(axela.frame) + 16, CGRectGetWidth(axela.frame), CGRectGetWidth(axela.frame) * (2/3)))
+        colorView.image = UIImage(named: "axela2.jpg")
         
-        // 设定颜色分割点动画
-        axelaLayer.locations = [CGFloat(arc4random()%10)/10, 1]
+        view.addSubview(colorView)
     }
 
 }

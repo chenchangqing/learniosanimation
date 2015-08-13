@@ -55,3 +55,5 @@ v3.3：使用CAShapeLayer完成ProgressCircleView自定义圆形进度条控件
 v4.0：使用CAGragientLayer显示3中颜色区域，显示3秒后通过改变颜色分割点，改变颜色区域
 
 v4.1：使用CAGragientLayer在UIImageView上增加颜色变化的遮罩动画
+
+v4.2：使用CAGragientLayer制作ColorUIImageView颜色遮罩控件
