@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         
         // 创建并初始化
         gradientLayer               = CAGradientLayer()
-        gradientLayer.frame         = CGRectMake(16, 36, CGRectGetWidth(view.bounds) - 32, 30)
+        gradientLayer.frame         = CGRectMake(16, 80, CGRectGetWidth(view.bounds) - 32, 30)
         gradientLayer.borderWidth   = 1
         
         view.layer.addSublayer(gradientLayer)
