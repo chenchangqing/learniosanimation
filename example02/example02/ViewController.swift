@@ -12,10 +12,15 @@ class ViewController: UIViewController {
     
     private var view01          : UIView!               // 进度条01
     private var sublayer        : CALayer!              // 进度条01的sublayer
-    private var progressView    : ProgressView!         // 进度条控件
+    
     private var timer           : NSTimer!              // 时间类
+    
+    private var progressView    : ProgressView!         // 进度条控件
     private var imageView       : FadeImageView!        // 淡入淡出控件
+    private var imageLayer      : CALayer!              // 遮罩效果层
 
+    // MARK: -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,10 +29,28 @@ class ViewController: UIViewController {
         progressView01()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - setup
+    
     /**
      * 初始化
      */
     private func setup() {
+        
+        setup01()
+        setup02()
+        setup03()
+        setup04()
+    }
+    
+    /**
+     * 普通进度条相关
+     */
+    private func setup01() {
         
         // 初始化view01
         view01                  = UIView(frame: CGRectMake(16, 36, CGRectGetWidth(view.bounds) - 32, 3))
@@ -39,6 +62,12 @@ class ViewController: UIViewController {
         sublayer.backgroundColor   = UIColor.purpleColor().CGColor
         sublayer.frame             = CGRectMake(0, 0, 0, 3)
         view01.layer.addSublayer(sublayer)
+    }
+    
+    /**
+     * 进度条控件相关
+     */
+    private func setup02() {
         
         // 初始化timer
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("progressView02"), userInfo: nil, repeats: true)
@@ -46,12 +75,46 @@ class ViewController: UIViewController {
         // 初始化progressView
         progressView = ProgressView(frame: CGRectMake(16, CGRectGetMaxY(view01.frame) + 16, CGRectGetWidth(view.frame) - 32, 3))
         view.addSubview(progressView)
+    }
+    
+    /**
+     * 淡入淡出图片控件相关
+     */
+    private func setup03() {
         
         // 初始化imageView
         imageView = FadeImageView(frame: CGRectMake(16, CGRectGetMaxY(progressView.frame) + 16, CGRectGetWidth(view.frame) - 32, 200))
         imageView.image = UIImage(named: "起始图片")
         view.addSubview(imageView)
     }
+    
+    /**
+     * 遮罩效果层相关
+     */
+    private func setup04() {
+        
+        // 处理图片
+        let contentImage    = UIImage(named: "原始图片")
+        let maskImage       = UIImage(named: "maskLayerContents")
+        
+        // 生成contentsLayer
+        imageLayer          = CALayer()
+        imageLayer.frame    = CGRectMake(16, CGRectGetMaxY(imageView.frame) + 16, CGRectGetWidth(view.frame) - 32, CGRectGetWidth(view.frame) - 32)
+        imageLayer.contents = contentImage?.CGImage
+        
+        // 生成maskLayer
+        let maskLayer       = CALayer()
+        maskLayer.frame     = imageLayer.bounds
+        maskLayer.contents  = maskImage?.CGImage
+        
+        // 给contentsLayer设定mask值
+        imageLayer.mask     = maskLayer
+        
+        // 将contentsLayer添加到layer中
+        view.layer.addSublayer(imageLayer)
+    }
+    
+    // MARK: - operations
     
     /**
      * 延迟1秒执行
@@ -78,12 +141,6 @@ class ViewController: UIViewController {
         let progressValue = Float(arc4random() % 100) / 100
         progressView.progressValue = progressValue
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 
