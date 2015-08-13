@@ -43,3 +43,5 @@ v2.2：使用CALayer的mask属性实现图片遮罩效果层
 v3.0：使用CAShapeLayer完成五角星动画
 
 v3.1：使用CAShapeLayer结合UIBezierPath绘制椭圆、正圆、矩形
+
+v3.2：使用CAShapelayer完成随机进度条的动画效果

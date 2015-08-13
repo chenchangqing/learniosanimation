@@ -9,16 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private var timer           : NSTimer!      // 时间控制
-    private var i               = 0
     
     private var starShapeLayer  : CAShapeLayer! // 五角星
     private var starPath01      : UIBezierPath! // 五角星曲线01
     private var starPath02      : UIBezierPath! // 五角星曲线02
+    private var timer           : NSTimer!      // 时间控制
+    private var i               = 0
     
     private var ovalLayer       : CAShapeLayer! // 椭圆
     private var rectLayer       : CAShapeLayer! // 矩形
     private var circleLayer     : CAShapeLayer! // 圆形
+    
+    private var progressLayer   : CAShapeLayer! // 圆形进度条
+    private var timer2          : NSTimer!      // 时间控制
     
 
     // MARK: -
@@ -28,8 +31,13 @@ class ViewController: UIViewController {
         
         setup()
         
-        // 定时执行动画
+        // 五角星定时执行动画
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("pathAnimation"), userInfo: nil, repeats: true)
+        
+        // 圆形进度条定制执行动画
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("animationEventTypeOne"), userInfo: nil, repeats: true)
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("animationEventTypeTwo"), userInfo: nil, repeats: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,11 +48,16 @@ class ViewController: UIViewController {
     
     private func setup() {
         
+        view.backgroundColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1)
+        
         // 配置五角星
         setup01()
         
         // 设置椭圆、正圆、矩形
         setup02()
+        
+        // 设置圆形进度条
+        setup03()
     }
     
     // MARK: - 五角星相关
@@ -68,53 +81,6 @@ class ViewController: UIViewController {
         starShapeLayer.backgroundColor = UIColor.purpleColor().CGColor
         
         view.layer.addSublayer(starShapeLayer)
-    }
-    
-    /**
-     * 设置椭圆、矩形、正圆的层
-     */
-    private func setup02() {
-        
-        // 创建椭圆层 创建矩形层 创建正圆层
-        ovalLayer           = CAShapeLayer()
-        ovalLayer.frame     = CGRectMake(16, CGRectGetMaxY(starShapeLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
-        
-        rectLayer           = CAShapeLayer()
-        rectLayer.frame     = CGRectMake(16, CGRectGetMaxY(ovalLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
-        
-        circleLayer         = CAShapeLayer()
-        circleLayer.frame   = CGRectMake(16, CGRectGetMaxY(rectLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
-        
-        // 分别创建塞尔曲线
-        let oval            = UIBezierPath(ovalInRect: CGRectMake(0, 0, 100, 50))
-        let rect            = UIBezierPath(rect: rectLayer.bounds)
-        let circle          = UIBezierPath(ovalInRect: CGRectMake(0, 0, CGRectGetHeight(circleLayer.bounds), CGRectGetHeight(circleLayer.bounds)))
-        
-        // 分别显示CAShapeLayer的边界
-        ovalLayer.borderWidth       = 1
-        rectLayer.borderWidth       = 1
-        circleLayer.borderWidth     = 1
-        
-        // 分别禁止内容显示超出CAShapeLayer的frame值
-        ovalLayer.masksToBounds     = true
-        rectLayer.masksToBounds     = true
-        circleLayer.masksToBounds   = true
-        
-        // 分别修改贝塞尔曲线的填充颜色
-        ovalLayer.fillColor         = UIColor.redColor().CGColor
-        rectLayer.fillColor         = UIColor.redColor().CGColor
-        circleLayer.fillColor       = UIColor.redColor().CGColor
-        
-        // 分别建立贝塞尔曲线与CAShapeLayer之间的关联
-        ovalLayer.path      = oval.CGPath
-        rectLayer.path      = rect.CGPath
-        circleLayer.path    = circle.CGPath
-        
-        // 分别添加并显示
-        view.layer.addSublayer(ovalLayer)
-        view.layer.addSublayer(rectLayer)
-        view.layer.addSublayer(circleLayer)
-        
     }
     
     /**
@@ -190,7 +156,103 @@ class ViewController: UIViewController {
         
         starPath02.closePath()
     }
-
+    
+    // MARK: - UIBezierPath
+    
+    /**
+     * 设置椭圆、矩形、正圆的层
+     */
+    private func setup02() {
+        
+        // 创建椭圆层 创建矩形层 创建正圆层
+        ovalLayer           = CAShapeLayer()
+        ovalLayer.frame     = CGRectMake(16, CGRectGetMaxY(starShapeLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        
+        rectLayer           = CAShapeLayer()
+        rectLayer.frame     = CGRectMake(16, CGRectGetMaxY(ovalLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        
+        circleLayer         = CAShapeLayer()
+        circleLayer.frame   = CGRectMake(16, CGRectGetMaxY(rectLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        
+        // 分别创建塞尔曲线
+        let oval            = UIBezierPath(ovalInRect: CGRectMake(0, 0, 100, 50))
+        let rect            = UIBezierPath(rect: rectLayer.bounds)
+        let circle          = UIBezierPath(ovalInRect: CGRectMake(0, 0, CGRectGetHeight(circleLayer.bounds), CGRectGetHeight(circleLayer.bounds)))
+        
+        // 分别显示CAShapeLayer的边界
+        ovalLayer.borderWidth       = 1
+        rectLayer.borderWidth       = 1
+        circleLayer.borderWidth     = 1
+        
+        // 分别禁止内容显示超出CAShapeLayer的frame值
+        ovalLayer.masksToBounds     = true
+        rectLayer.masksToBounds     = true
+        circleLayer.masksToBounds   = true
+        
+        // 分别修改贝塞尔曲线的填充颜色
+        ovalLayer.fillColor         = UIColor.redColor().CGColor
+        rectLayer.fillColor         = UIColor.redColor().CGColor
+        circleLayer.fillColor       = UIColor.redColor().CGColor
+        
+        // 分别建立贝塞尔曲线与CAShapeLayer之间的关联
+        ovalLayer.path      = oval.CGPath
+        rectLayer.path      = rect.CGPath
+        circleLayer.path    = circle.CGPath
+        
+        // 分别添加并显示
+        view.layer.addSublayer(ovalLayer)
+        view.layer.addSublayer(rectLayer)
+        view.layer.addSublayer(circleLayer)
+        
+    }
+    
+    // MARK: - 圆形进度条动画
+    
+    /**
+     * 设置圆形进度条
+     */
+    private func setup03() {
+        
+        // 创建CAShapeLayer
+        progressLayer       = CAShapeLayer()
+        progressLayer.frame = CGRectMake(16, CGRectGetMaxY(circleLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        
+        // 创建圆形贝塞尔曲线
+        let oval = UIBezierPath(ovalInRect: CGRectMake(0, 0, 50, 50))
+        
+        // 修改CAShapeLayer的线条相关值
+        progressLayer.fillColor         = UIColor.clearColor().CGColor
+        progressLayer.strokeColor       = UIColor.redColor().CGColor
+        progressLayer.lineWidth         = 2
+        progressLayer.strokeStart       = 0
+        progressLayer.strokeEnd         = 0
+        
+        // 建立贝塞尔曲线与CAShapeLayer之间的关联
+        progressLayer.path = oval.CGPath
+        
+        // 添加并显示
+        view.layer.addSublayer(progressLayer)
+    }
+    
+    /**
+     * 动画01
+     */
+    func animationEventTypeOne() {
+        
+        progressLayer.strokeEnd = CGFloat(arc4random() % 100) / 100
+    }
+    
+    /**
+     * 动画02
+     */
+    func animationEventTypeTwo() {
+        
+        let valueOne = CGFloat(arc4random() % 100) / 100
+        let valuTwo = CGFloat(arc4random() % 100) / 100
+        
+        progressLayer.strokeStart = valueOne < valuTwo ? valueOne : valuTwo
+        progressLayer.strokeEnd   = valueOne > valuTwo ? valueOne : valuTwo
+    }
 
 }
 
