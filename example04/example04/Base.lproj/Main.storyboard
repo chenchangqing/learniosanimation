@@ -46,7 +46,7 @@
         <!--Item-->
         <scene sceneID="XJT-9R-D5E">
             <objects>
-                <viewController id="Zv4-kh-moQ" sceneMemberID="viewController">
+                <viewController id="Zv4-kh-moQ" customClass="ViewController02" customModule="example04" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JFO-GZ-EJN"/>
                         <viewControllerLayoutGuide type="bottom" id="sSW-4x-wOI"/>

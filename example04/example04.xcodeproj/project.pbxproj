@@ -16,6 +16,8 @@
 		E61408501B7C94A00090B4BA /* axela.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E614084F1B7C94A00090B4BA /* axela.jpg */; };
 		E61408521B7C9C7A0090B4BA /* ColorUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61408511B7C9C7A0090B4BA /* ColorUIImageView.swift */; };
 		E61408561B7CA3C30090B4BA /* axela2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E61408551B7CA3C30090B4BA /* axela2.jpg */; };
+		E61A0C1E1B7CEFBB00808517 /* ViewController02.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A0C1D1B7CEFBB00808517 /* ViewController02.swift */; };
+		E61A0C201B7CF00400808517 /* CAShapeLayer+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A0C1F1B7CF00400808517 /* CAShapeLayer+Circle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		E614084F1B7C94A00090B4BA /* axela.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = axela.jpg; sourceTree = "<group>"; };
 		E61408511B7C9C7A0090B4BA /* ColorUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUIImageView.swift; sourceTree = "<group>"; };
 		E61408551B7CA3C30090B4BA /* axela2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = axela2.jpg; sourceTree = "<group>"; };
+		E61A0C1D1B7CEFBB00808517 /* ViewController02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController02.swift; sourceTree = "<group>"; };
+		E61A0C1F1B7CF00400808517 /* CAShapeLayer+Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Circle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				E61408381B7C8C2A0090B4BA /* LaunchScreen.xib */,
 				E614082D1B7C8C2A0090B4BA /* Supporting Files */,
 				E61408511B7C9C7A0090B4BA /* ColorUIImageView.swift */,
+				E61A0C1D1B7CEFBB00808517 /* ViewController02.swift */,
+				E61A0C1F1B7CF00400808517 /* CAShapeLayer+Circle.swift */,
 			);
 			path = example04;
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 			files = (
 				E61408321B7C8C2A0090B4BA /* ViewController.swift in Sources */,
 				E61408301B7C8C2A0090B4BA /* AppDelegate.swift in Sources */,
+				E61A0C1E1B7CEFBB00808517 /* ViewController02.swift in Sources */,
+				E61A0C201B7CF00400808517 /* CAShapeLayer+Circle.swift in Sources */,
 				E61408521B7C9C7A0090B4BA /* ColorUIImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +429,7 @@
 				E614084B1B7C8C2A0090B4BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E614084C1B7C8C2A0090B4BA /* Build configuration list for PBXNativeTarget "example04Tests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +438,7 @@
 				E614084E1B7C8C2A0090B4BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
