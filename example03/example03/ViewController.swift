@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     private var starShapeLayer  : CAShapeLayer! // 五角星
     private var starPath01      : UIBezierPath! // 五角星曲线01
     private var starPath02      : UIBezierPath! // 五角星曲线02
+    
+    private var ovalLayer       : CAShapeLayer! // 椭圆
+    private var rectLayer       : CAShapeLayer! // 矩形
+    private var circleLayer     : CAShapeLayer! // 圆形
+    
 
     // MARK: -
     
@@ -37,6 +42,9 @@ class ViewController: UIViewController {
         
         // 配置五角星
         setup01()
+        
+        // 设置椭圆、正圆、矩形
+        setup02()
     }
     
     // MARK: - 五角星相关
@@ -60,6 +68,53 @@ class ViewController: UIViewController {
         starShapeLayer.backgroundColor = UIColor.purpleColor().CGColor
         
         view.layer.addSublayer(starShapeLayer)
+    }
+    
+    /**
+     * 设置椭圆、矩形、正圆的层
+     */
+    private func setup02() {
+        
+        // 创建椭圆层 创建矩形层 创建正圆层
+        ovalLayer           = CAShapeLayer()
+        ovalLayer.frame     = CGRectMake(16, CGRectGetMaxY(starShapeLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        
+        rectLayer           = CAShapeLayer()
+        rectLayer.frame     = CGRectMake(16, CGRectGetMaxY(ovalLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        
+        circleLayer         = CAShapeLayer()
+        circleLayer.frame   = CGRectMake(16, CGRectGetMaxY(rectLayer.frame) + 16, CGRectGetWidth(view.bounds) - 32, 50)
+        
+        // 分别创建塞尔曲线
+        let oval            = UIBezierPath(ovalInRect: CGRectMake(0, 0, 100, 50))
+        let rect            = UIBezierPath(rect: rectLayer.bounds)
+        let circle          = UIBezierPath(ovalInRect: CGRectMake(0, 0, CGRectGetHeight(circleLayer.bounds), CGRectGetHeight(circleLayer.bounds)))
+        
+        // 分别显示CAShapeLayer的边界
+        ovalLayer.borderWidth       = 1
+        rectLayer.borderWidth       = 1
+        circleLayer.borderWidth     = 1
+        
+        // 分别禁止内容显示超出CAShapeLayer的frame值
+        ovalLayer.masksToBounds     = true
+        rectLayer.masksToBounds     = true
+        circleLayer.masksToBounds   = true
+        
+        // 分别修改贝塞尔曲线的填充颜色
+        ovalLayer.fillColor         = UIColor.redColor().CGColor
+        rectLayer.fillColor         = UIColor.redColor().CGColor
+        circleLayer.fillColor       = UIColor.redColor().CGColor
+        
+        // 分别建立贝塞尔曲线与CAShapeLayer之间的关联
+        ovalLayer.path      = oval.CGPath
+        rectLayer.path      = rect.CGPath
+        circleLayer.path    = circle.CGPath
+        
+        // 分别添加并显示
+        view.layer.addSublayer(ovalLayer)
+        view.layer.addSublayer(rectLayer)
+        view.layer.addSublayer(circleLayer)
+        
     }
     
     /**
