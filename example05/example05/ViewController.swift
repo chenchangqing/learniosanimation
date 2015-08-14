@@ -86,7 +86,7 @@ class ViewController: UIViewController {
         
         // 描述2
         label02                 = UILabel(frame: CGRectMake(16, CGRectGetMaxY(resultImageView.frame) + 8, CGRectGetWidth(view.bounds) - 32, 42))
-        label02.text            = "v5.0：利用CAGradientLayer创建maskView"
+        label02.text            = "v5.1：利用CAGradientLayer创建maskView"
         label02.textColor       = UIColor.grayColor()
         label02.numberOfLines   = 2
         containerView.addSubview(label02)

@@ -71,3 +71,5 @@ v4.6：使用CAGragientLayer作为UIImageView的layer.mask实现改变透明度�
 来源：使用 maskView 设计动画 http://www.jikexueyuan.com/course/1257_4.html
 
 v5.0：利用带有透明通道的图片创建maskView
+
+v5.1：利用CAGradientLayer创建maskView
