@@ -69,6 +69,7 @@ v4.6：使用CAGragientLayer作为UIImageView的layer.mask实现改变透明度�
 ----- ----- ----- example05 ----- ----- -----
 
 来源：使用 maskView 设计动画 http://www.jikexueyuan.com/course/1257_4.html
+相关：https://github.com/YouXianMing/TransformationFadeView
 
 v5.0：利用带有透明通道的图片创建maskView
 
@@ -77,3 +78,4 @@ v5.1：利用CAGradientLayer创建maskView
 v5.2：使用带alpha通道图片设置maskView
 
 v5.3：设置渐变控件FadeLabel,演示FadeLabel效果
+
