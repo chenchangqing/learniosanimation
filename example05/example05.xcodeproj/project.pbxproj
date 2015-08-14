@@ -19,6 +19,7 @@
 		E6AC04C01B7DC2730056E116 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC04BD1B7DC2730056E116 /* 2.png */; };
 		E6AC04C11B7DC2730056E116 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC04BE1B7DC2730056E116 /* background@2x.png */; };
 		E6AC04C51B7DC7D80056E116 /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC04C41B7DC7D80056E116 /* UIView+SetRect.m */; };
+		E6AC04C71B7DD0090056E116 /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC04C61B7DD0090056E116 /* FadeLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E6AC04C21B7DC7D70056E116 /* example05-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example05-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6AC04C31B7DC7D80056E116 /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
 		E6AC04C41B7DC7D80056E116 /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
+		E6AC04C61B7DD0090056E116 /* FadeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				E601ED341B7D9D5A00C2A8C2 /* LaunchScreen.xib */,
 				E601ED291B7D9D5A00C2A8C2 /* Supporting Files */,
 				E6AC04C21B7DC7D70056E116 /* example05-Bridging-Header.h */,
+				E6AC04C61B7DD0090056E116 /* FadeLabel.swift */,
 			);
 			path = example05;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				E601ED2E1B7D9D5A00C2A8C2 /* ViewController.swift in Sources */,
 				E6AC04C51B7DC7D80056E116 /* UIView+SetRect.m in Sources */,
+				E6AC04C71B7DD0090056E116 /* FadeLabel.swift in Sources */,
 				E601ED2C1B7D9D5A00C2A8C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -75,3 +75,5 @@ v5.0：利用带有透明通道的图片创建maskView
 v5.1：利用CAGradientLayer创建maskView
 
 v5.2：使用带alpha通道图片设置maskView
+
+v5.3：设置渐变控件FadeLabel,演示FadeLabel效果

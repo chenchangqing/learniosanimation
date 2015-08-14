@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     private var imageOne        : UIImageView!
     private var imageTwo        : UIImageView!
     
+    private var fadeLabel       : FadeLabel!    // 渐变控件
+    
 
     // MARK: -
     
@@ -40,14 +42,17 @@ class ViewController: UIViewController {
         // 显示baseImageView2时，执行动画
         performAnimation()
         
-        //切换图片
+        // 切换图片
         performAnimation2()
+        
+        // 渐变控件动画
+        fadeLabel.animate()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        containerViewHeight.constant = CGRectGetHeight(view.bounds) + 400
+        containerViewHeight.constant = CGRectGetHeight(view.bounds) + 450
     }
 
     // MARK: - SETUP
@@ -57,6 +62,7 @@ class ViewController: UIViewController {
         setupImages()
         setupMaskViewUsingLayer()
         setupMaskViewUsingImage()
+        setupFadeLabel()
     }
     
     /**
@@ -159,6 +165,18 @@ class ViewController: UIViewController {
         imageTwo.image = UIImage(named: "2")
         maskView3.addSubview(imageTwo)
         
+    }
+    
+    /**
+     * 设置渐变控件FadeLabel
+     */
+    private func setupFadeLabel() {
+        
+        fadeLabel = FadeLabel(frame: CGRectMake(16, CGRectGetMaxY(frontImageView.frame) + 8, CGRectGetWidth(view.bounds) - 32, 42))
+        fadeLabel.text = "v5.3：设置渐变控件FadeLabel,演示FadeLabel效果"
+        fadeLabel.textColor = UIColor.grayColor()
+        fadeLabel.numberOfLines = 2
+        containerView.addSubview(fadeLabel)
     }
 
     // MARK: -
