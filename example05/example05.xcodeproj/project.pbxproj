@@ -15,6 +15,10 @@
 		E601ED421B7D9D5A00C2A8C2 /* example05Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601ED411B7D9D5A00C2A8C2 /* example05Tests.swift */; };
 		E601ED4D1B7DAF1300C2A8C2 /* base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E601ED4B1B7DAF1300C2A8C2 /* base@2x.png */; };
 		E601ED4E1B7DAF1300C2A8C2 /* mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E601ED4C1B7DAF1300C2A8C2 /* mask@2x.png */; };
+		E6AC04BF1B7DC2730056E116 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC04BC1B7DC2730056E116 /* 1.png */; };
+		E6AC04C01B7DC2730056E116 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC04BD1B7DC2730056E116 /* 2.png */; };
+		E6AC04C11B7DC2730056E116 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC04BE1B7DC2730056E116 /* background@2x.png */; };
+		E6AC04C51B7DC7D80056E116 /* UIView+SetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC04C41B7DC7D80056E116 /* UIView+SetRect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,12 @@
 		E601ED411B7D9D5A00C2A8C2 /* example05Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example05Tests.swift; sourceTree = "<group>"; };
 		E601ED4B1B7DAF1300C2A8C2 /* base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "base@2x.png"; sourceTree = "<group>"; };
 		E601ED4C1B7DAF1300C2A8C2 /* mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask@2x.png"; sourceTree = "<group>"; };
+		E6AC04BC1B7DC2730056E116 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		E6AC04BD1B7DC2730056E116 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		E6AC04BE1B7DC2730056E116 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		E6AC04C21B7DC7D70056E116 /* example05-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example05-Bridging-Header.h"; sourceTree = "<group>"; };
+		E6AC04C31B7DC7D80056E116 /* UIView+SetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetRect.h"; sourceTree = "<group>"; };
+		E6AC04C41B7DC7D80056E116 /* UIView+SetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetRect.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +93,13 @@
 			children = (
 				E601ED2B1B7D9D5A00C2A8C2 /* AppDelegate.swift */,
 				E601ED2D1B7D9D5A00C2A8C2 /* ViewController.swift */,
+				E6AC04C31B7DC7D80056E116 /* UIView+SetRect.h */,
+				E6AC04C41B7DC7D80056E116 /* UIView+SetRect.m */,
 				E601ED2F1B7D9D5A00C2A8C2 /* Main.storyboard */,
 				E601ED321B7D9D5A00C2A8C2 /* Images.xcassets */,
 				E601ED341B7D9D5A00C2A8C2 /* LaunchScreen.xib */,
 				E601ED291B7D9D5A00C2A8C2 /* Supporting Files */,
+				E6AC04C21B7DC7D70056E116 /* example05-Bridging-Header.h */,
 			);
 			path = example05;
 			sourceTree = "<group>";
@@ -94,6 +107,9 @@
 		E601ED291B7D9D5A00C2A8C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6AC04BC1B7DC2730056E116 /* 1.png */,
+				E6AC04BD1B7DC2730056E116 /* 2.png */,
+				E6AC04BE1B7DC2730056E116 /* background@2x.png */,
 				E601ED4B1B7DAF1300C2A8C2 /* base@2x.png */,
 				E601ED4C1B7DAF1300C2A8C2 /* mask@2x.png */,
 				E601ED2A1B7D9D5A00C2A8C2 /* Info.plist */,
@@ -200,8 +216,11 @@
 			files = (
 				E601ED311B7D9D5A00C2A8C2 /* Main.storyboard in Resources */,
 				E601ED4E1B7DAF1300C2A8C2 /* mask@2x.png in Resources */,
+				E6AC04C01B7DC2730056E116 /* 2.png in Resources */,
 				E601ED361B7D9D5A00C2A8C2 /* LaunchScreen.xib in Resources */,
+				E6AC04BF1B7DC2730056E116 /* 1.png in Resources */,
 				E601ED331B7D9D5A00C2A8C2 /* Images.xcassets in Resources */,
+				E6AC04C11B7DC2730056E116 /* background@2x.png in Resources */,
 				E601ED4D1B7DAF1300C2A8C2 /* base@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E601ED2E1B7D9D5A00C2A8C2 /* ViewController.swift in Sources */,
+				E6AC04C51B7DC7D80056E116 /* UIView+SetRect.m in Sources */,
 				E601ED2C1B7D9D5A00C2A8C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,10 +368,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = example05/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "example05/example05-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -359,10 +382,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = example05/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "example05/example05-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -419,6 +444,7 @@
 				E601ED471B7D9D5A00C2A8C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E601ED481B7D9D5A00C2A8C2 /* Build configuration list for PBXNativeTarget "example05Tests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +453,7 @@
 				E601ED4A1B7D9D5A00C2A8C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

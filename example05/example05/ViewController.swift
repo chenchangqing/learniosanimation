@@ -20,7 +20,14 @@ class ViewController: UIViewController {
     
     private var label02         : UILabel!      // 描述2
     private var baseImageView2  : UIImageView!  // 底图2
-    private var maskView        : UIView!       // 遮罩
+    private var maskView        : UIView!       // 遮罩2
+    
+    private var label03         : UILabel!      // 描述3
+    private var maskView3       : UIView!       // 遮罩3
+    private var frontImageView  : UIImageView!  // 前景图
+    private var backImageView   : UIImageView!  // 背景图
+    private var imageOne        : UIImageView!
+    private var imageTwo        : UIImageView!
     
 
     // MARK: -
@@ -31,13 +38,16 @@ class ViewController: UIViewController {
         setup()
         
         // 显示baseImageView2时，执行动画
-        performAnimatiion()
+        performAnimation()
+        
+        //切换图片
+        performAnimation2()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        containerViewHeight.constant = CGRectGetHeight(view.bounds) + 100
+        containerViewHeight.constant = CGRectGetHeight(view.bounds) + 400
     }
 
     // MARK: - SETUP
@@ -46,6 +56,7 @@ class ViewController: UIViewController {
         
         setupImages()
         setupMaskViewUsingLayer()
+        setupMaskViewUsingImage()
     }
     
     /**
@@ -111,13 +122,51 @@ class ViewController: UIViewController {
         // 给底图设置maskView
         baseImageView2.maskView = maskView
     }
+    
+    /**
+     * 使用带alpha通道图片设置maskView
+     */
+    private func setupMaskViewUsingImage() {
+        
+        // 描述3
+        label03                 = UILabel(frame: CGRectMake(16, CGRectGetMaxY(baseImageView2.frame) + 8, CGRectGetWidth(view.bounds) - 32, 42))
+        label03.text            = "v5.2：使用带alpha通道图片设置maskView"
+        label03.textColor       = UIColor.grayColor()
+        label03.numberOfLines   = 2
+        containerView.addSubview(label03)
+        
+        // 背景图
+        backImageView = UIImageView(frame: CGRectMake(16, CGRectGetMaxY(label03.frame) + 8, 200, 200))
+        backImageView.image = UIImage(named: "background")
+        containerView.addSubview(backImageView)
+        
+        // 前景图
+        frontImageView = UIImageView(frame: backImageView.frame)
+        frontImageView.image = UIImage(named: "base")
+        containerView.addSubview(frontImageView)
+        
+        // maskView
+        maskView3 = UIView(frame: frontImageView.bounds)
+        frontImageView.maskView = maskView3
+        
+        // alpha图片01
+        imageOne = UIImageView(frame: CGRectMake(0, 0, 100, 400))
+        imageOne.image = UIImage(named: "1")
+        maskView3.addSubview(imageOne)
+        
+        // alpha图片02
+        imageTwo = UIImageView(frame: CGRectMake(100, -200, 100, 400))
+        imageTwo.image = UIImage(named: "2")
+        maskView3.addSubview(imageTwo)
+        
+    }
 
     // MARK: -
     
     /** 
      * baseImageView2 -> maskView执行动画
      */
-    private func performAnimatiion() {
+    private func performAnimation() {
         
         var frame = maskView.frame
         frame.origin.x -= 150
@@ -128,6 +177,20 @@ class ViewController: UIViewController {
             var frame = self.maskView.frame
             frame.origin.x += 300
             self.maskView.frame = frame
+        }) { (finished) -> Void in
+            
+        }
+    }
+    
+    /**
+     * 图片切换动画
+     */
+    private func performAnimation2() {
+        
+        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+            
+            self.imageOne.y -= 400
+            self.imageTwo.y += 400
         }) { (finished) -> Void in
             
         }
