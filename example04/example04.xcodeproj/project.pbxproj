@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E601ED141B7D801000C2A8C2 /* MulticolorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601ED131B7D801000C2A8C2 /* MulticolorView.swift */; };
 		E61408301B7C8C2A0090B4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614082F1B7C8C2A0090B4BA /* AppDelegate.swift */; };
 		E61408321B7C8C2A0090B4BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61408311B7C8C2A0090B4BA /* ViewController.swift */; };
 		E61408351B7C8C2A0090B4BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61408331B7C8C2A0090B4BA /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E601ED131B7D801000C2A8C2 /* MulticolorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorView.swift; sourceTree = "<group>"; };
 		E614082A1B7C8C2A0090B4BA /* example04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E614082E1B7C8C2A0090B4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E614082F1B7C8C2A0090B4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				E61408511B7C9C7A0090B4BA /* ColorUIImageView.swift */,
 				E61A0C1D1B7CEFBB00808517 /* ViewController02.swift */,
 				E61A0C1F1B7CF00400808517 /* CAShapeLayer+Circle.swift */,
+				E601ED131B7D801000C2A8C2 /* MulticolorView.swift */,
 			);
 			path = example04;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				E61408301B7C8C2A0090B4BA /* AppDelegate.swift in Sources */,
 				E61A0C1E1B7CEFBB00808517 /* ViewController02.swift in Sources */,
 				E61A0C201B7CF00400808517 /* CAShapeLayer+Circle.swift in Sources */,
+				E601ED141B7D801000C2A8C2 /* MulticolorView.swift in Sources */,
 				E61408521B7C9C7A0090B4BA /* ColorUIImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

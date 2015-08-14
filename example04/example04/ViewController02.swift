@@ -15,6 +15,8 @@ class ViewController02: UIViewController {
     private let radius          : CGFloat          = 100
     private var timer           : NSTimer!
     
+    private var multicolorView  : MulticolorView!   // 动画圆环
+    
     // MARK: -
     
     override func viewDidLoad() {
@@ -39,6 +41,9 @@ class ViewController02: UIViewController {
         
         // 设置渐变层
         setup02()
+        
+        // 设置动画圆环
+        setup03()
     }
     
     func timerEvent() {
@@ -49,6 +54,8 @@ class ViewController02: UIViewController {
             UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1).CGColor,
             UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1).CGColor,
             UIColor(red: CGFloat(arc4random() % 255)/255, green: CGFloat(arc4random() % 255)/255, blue: CGFloat(arc4random() % 255)/255, alpha: 1).CGColor]
+        
+        multicolorView.percent = CGFloat(arc4random()%100)/100
     }
     
     // MARK: - 设置虚线圆环
@@ -94,6 +101,22 @@ class ViewController02: UIViewController {
         // 添加到系统图层中
         view.layer.addSublayer(faucet)
         
+    }
+    
+    // MARK: - 设置动画圆环
+    
+    private func setup03() {
+        
+        multicolorView              = MulticolorView(frame: CGRectMake(CGRectGetMinX(faucet.frame), CGRectGetMaxY(faucet.frame) + 16, radius*2, radius*2))
+        multicolorView.lineWidth    = 3
+        multicolorView.duration     = 3
+        multicolorView.colors       = [
+            UIColor.cyanColor().CGColor,
+            UIColor.yellowColor().CGColor,
+            UIColor.cyanColor().CGColor
+        ]
+        multicolorView.startAnimation()
+        view.addSubview(multicolorView)
     }
 
 }

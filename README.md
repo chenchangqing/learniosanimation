@@ -59,3 +59,5 @@ v4.1：使用CAGragientLayer在UIImageView上增加颜色变化的遮罩动画
 v4.2：使用CAGragientLayer制作ColorUIImageView颜色遮罩控件
 
 v4.3：使用CAGragientLayer制作有渐变色的虚线圆环
+
+v4.4：使用CAGragientLayer制作连续渐变色的动画圆环
