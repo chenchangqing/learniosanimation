@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
+    
     private var baseImageView   : UIImageView!  // 底图
     private var maskImageView   : UIImageView!  // 遮罩图
     private var resultImageView : UIImageView!  // 结合后的图片
@@ -21,10 +24,11 @@ class ViewController: UIViewController {
 
         setup()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        containerViewHeight.constant = CGRectGetHeight(view.bounds) + 100
     }
 
     // MARK: - SETUP
@@ -40,22 +44,22 @@ class ViewController: UIViewController {
     private func setupImages() {
         
         // 底图
-        baseImageView = UIImageView(frame: CGRectMake(16, 36, 60, 60))
+        baseImageView = UIImageView(frame: CGRectMake(16, 36, 200, 200))
         baseImageView.image = UIImage(named: "base")
-        view.addSubview(baseImageView)
+        containerView.addSubview(baseImageView)
         
         // mask
-        maskImageView = UIImageView(frame: CGRectMake(CGRectGetMaxX(baseImageView.frame) + 16, 36, 60, 60))
+        maskImageView = UIImageView(frame: CGRectMake(16, CGRectGetMaxY(baseImageView.frame) + 16, 200, 200))
         maskImageView.image = UIImage(named: "mask")
-        view.addSubview(maskImageView)
+        containerView.addSubview(maskImageView)
         
         // 使用maskView的情况
-        resultImageView             = UIImageView(frame: CGRectMake(CGRectGetMaxX(maskImageView.frame) + 16, 36, 60, 60))
+        resultImageView             = UIImageView(frame: CGRectMake(16, CGRectGetMaxY(maskImageView.frame) + 16, 200, 200))
         resultImageView.image       = UIImage(named: "base")
-        let mask                    = UIImageView(frame: CGRectMake(0, 0, 60, 60))
+        let mask                    = UIImageView(frame: CGRectMake(0, 0, 200, 200))
         mask.image                  = UIImage(named: "mask")
         resultImageView.maskView    = mask
-        view.addSubview(resultImageView)
+        containerView.addSubview(resultImageView)
     }
 
 }
