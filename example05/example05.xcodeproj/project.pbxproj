@@ -13,6 +13,8 @@
 		E601ED331B7D9D5A00C2A8C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E601ED321B7D9D5A00C2A8C2 /* Images.xcassets */; };
 		E601ED361B7D9D5A00C2A8C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E601ED341B7D9D5A00C2A8C2 /* LaunchScreen.xib */; };
 		E601ED421B7D9D5A00C2A8C2 /* example05Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601ED411B7D9D5A00C2A8C2 /* example05Tests.swift */; };
+		E601ED4D1B7DAF1300C2A8C2 /* base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E601ED4B1B7DAF1300C2A8C2 /* base@2x.png */; };
+		E601ED4E1B7DAF1300C2A8C2 /* mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E601ED4C1B7DAF1300C2A8C2 /* mask@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		E601ED3B1B7D9D5A00C2A8C2 /* example05Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example05Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E601ED401B7D9D5A00C2A8C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E601ED411B7D9D5A00C2A8C2 /* example05Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example05Tests.swift; sourceTree = "<group>"; };
+		E601ED4B1B7DAF1300C2A8C2 /* base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "base@2x.png"; sourceTree = "<group>"; };
+		E601ED4C1B7DAF1300C2A8C2 /* mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mask@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		E601ED291B7D9D5A00C2A8C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E601ED4B1B7DAF1300C2A8C2 /* base@2x.png */,
+				E601ED4C1B7DAF1300C2A8C2 /* mask@2x.png */,
 				E601ED2A1B7D9D5A00C2A8C2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,8 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E601ED311B7D9D5A00C2A8C2 /* Main.storyboard in Resources */,
+				E601ED4E1B7DAF1300C2A8C2 /* mask@2x.png in Resources */,
 				E601ED361B7D9D5A00C2A8C2 /* LaunchScreen.xib in Resources */,
 				E601ED331B7D9D5A00C2A8C2 /* Images.xcassets in Resources */,
+				E601ED4D1B7DAF1300C2A8C2 /* base@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
