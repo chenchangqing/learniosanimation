@@ -61,3 +61,5 @@ v4.2：使用CAGragientLayer制作ColorUIImageView颜色遮罩控件
 v4.3：使用CAGragientLayer制作有渐变色的虚线圆环
 
 v4.4：使用CAGragientLayer制作连续渐变色的动画圆环
+
+v4.5：使用CAGragientLayer制作颜色渐变遮罩美女的示例

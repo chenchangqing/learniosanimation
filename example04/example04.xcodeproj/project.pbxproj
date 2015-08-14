@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E601ED141B7D801000C2A8C2 /* MulticolorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601ED131B7D801000C2A8C2 /* MulticolorView.swift */; };
+		E601ED161B7D8FA500C2A8C2 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E601ED151B7D8FA500C2A8C2 /* bg@2x.png */; };
+		E601ED181B7D8FBF00C2A8C2 /* ViewController03.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601ED171B7D8FBF00C2A8C2 /* ViewController03.swift */; };
 		E61408301B7C8C2A0090B4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614082F1B7C8C2A0090B4BA /* AppDelegate.swift */; };
 		E61408321B7C8C2A0090B4BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61408311B7C8C2A0090B4BA /* ViewController.swift */; };
 		E61408351B7C8C2A0090B4BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61408331B7C8C2A0090B4BA /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		E601ED131B7D801000C2A8C2 /* MulticolorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorView.swift; sourceTree = "<group>"; };
+		E601ED151B7D8FA500C2A8C2 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		E601ED171B7D8FBF00C2A8C2 /* ViewController03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController03.swift; sourceTree = "<group>"; };
 		E614082A1B7C8C2A0090B4BA /* example04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E614082E1B7C8C2A0090B4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E614082F1B7C8C2A0090B4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				E61A0C1D1B7CEFBB00808517 /* ViewController02.swift */,
 				E61A0C1F1B7CF00400808517 /* CAShapeLayer+Circle.swift */,
 				E601ED131B7D801000C2A8C2 /* MulticolorView.swift */,
+				E601ED171B7D8FBF00C2A8C2 /* ViewController03.swift */,
 			);
 			path = example04;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 		E614082D1B7C8C2A0090B4BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E601ED151B7D8FA500C2A8C2 /* bg@2x.png */,
 				E614084F1B7C94A00090B4BA /* axela.jpg */,
 				E61408551B7CA3C30090B4BA /* axela2.jpg */,
 				E614082E1B7C8C2A0090B4BA /* Info.plist */,
@@ -213,6 +219,7 @@
 				E61408351B7C8C2A0090B4BA /* Main.storyboard in Resources */,
 				E614083A1B7C8C2A0090B4BA /* LaunchScreen.xib in Resources */,
 				E61408371B7C8C2A0090B4BA /* Images.xcassets in Resources */,
+				E601ED161B7D8FA500C2A8C2 /* bg@2x.png in Resources */,
 				E61408561B7CA3C30090B4BA /* axela2.jpg in Resources */,
 				E61408501B7C94A00090B4BA /* axela.jpg in Resources */,
 			);
@@ -233,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E61408321B7C8C2A0090B4BA /* ViewController.swift in Sources */,
+				E601ED181B7D8FBF00C2A8C2 /* ViewController03.swift in Sources */,
 				E61408301B7C8C2A0090B4BA /* AppDelegate.swift in Sources */,
 				E61A0C1E1B7CEFBB00808517 /* ViewController02.swift in Sources */,
 				E61A0C201B7CF00400808517 /* CAShapeLayer+Circle.swift in Sources */,
