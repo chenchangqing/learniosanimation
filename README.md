@@ -65,3 +65,9 @@ v4.4：使用CAGragientLayer制作连续渐变色的动画圆环
 v4.5：使用CAGragientLayer制作颜色渐变遮罩美女的示例
 
 v4.6：使用CAGragientLayer作为UIImageView的layer.mask实现改变透明度显示底图的效果
+
+----- ----- ----- example05 ----- ----- -----
+
+来源：使用 maskView 设计动画 http://www.jikexueyuan.com/course/1257_4.html
+
+v5.0：利用带有透明通道的图片创建maskView
