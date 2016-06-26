@@ -183,12 +183,12 @@ class ViewController: UIViewController {
     */
     @IBAction func typeTwo() {
         
-        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+        UIView.animateWithDuration(2, delay: 0, options: [UIViewAnimationOptions.CurveLinear , UIViewAnimationOptions.Repeat , UIViewAnimationOptions.Autoreverse], animations: { () -> Void in
             
             self.view01Operation()
         }) { (finished) -> Void in
             
-            println("view01Operation是否完成：\(finished)")
+            print("view01Operation是否完成：\(finished)")
         }
     }
     
@@ -220,20 +220,20 @@ class ViewController: UIViewController {
     */
     @IBAction func typeFour() {
         
-        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+        UIView.animateWithDuration(2, delay: 0, options: [UIViewAnimationOptions.CurveLinear , UIViewAnimationOptions.Repeat , UIViewAnimationOptions.Autoreverse], animations: { () -> Void in
             
             self.view01Operation()
             
-            UIView.animateWithDuration(6, delay: 0, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.OverrideInheritedDuration, animations: { () -> Void in
+            UIView.animateWithDuration(6, delay: 0, options: [UIViewAnimationOptions.CurveLinear , UIViewAnimationOptions.Repeat , UIViewAnimationOptions.Autoreverse , UIViewAnimationOptions.OverrideInheritedDuration], animations: { () -> Void in
                 
                 self.view02Operation()
             }) { (finished) -> Void in
                 
-                println("view02Operation是否完成：\(finished)")
+                print("view02Operation是否完成：\(finished)")
             }
         }) { (finished) -> Void in
             
-            println("view01Operation是否完成：\(finished)")
+            print("view01Operation是否完成：\(finished)")
         }
     }
     
@@ -243,12 +243,12 @@ class ViewController: UIViewController {
     */
     @IBAction func typeFive() {
         
-        UIView.transitionWithView(self.view01Subview, duration: 2, options: UIViewAnimationOptions.TransitionCrossDissolve | UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
+        UIView.transitionWithView(self.view01Subview, duration: 2, options: [UIViewAnimationOptions.TransitionCrossDissolve , UIViewAnimationOptions.AllowAnimatedContent], animations: { () -> Void in
             
             self.view01SubviewOperation()
         }) { (finished) -> Void in
             
-            println("view01SubviewOperation是否完成：\(finished)")
+            print("view01SubviewOperation是否完成：\(finished)")
         }
     }
     
@@ -260,7 +260,7 @@ class ViewController: UIViewController {
         
         UIView.transitionFromView(view03, toView: view04, duration: 1, options: UIViewAnimationOptions.TransitionCrossDissolve) { (finished) -> Void in
             
-            println("view04 replace view03 是否完成：\(finished)")
+            print("view04 replace view03 是否完成：\(finished)")
         }
     }
     
@@ -339,14 +339,14 @@ class ViewController: UIViewController {
     
     // MARK: - begin/commit animation delegate
     
-    override func animationDidStart(anim: CAAnimation!) {
+    override func animationDidStart(anim: CAAnimation) {
         
-        println("animationDidStart")
+        print("animationDidStart")
     }
     
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         
-        println("animationDidStop")
+        print("animationDidStop")
     }
 }
 

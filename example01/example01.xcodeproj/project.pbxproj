@@ -156,6 +156,7 @@
 		E61E612B1B7AE17600498AC2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = com.chenchangqing;
 				TargetAttributes = {
@@ -411,6 +412,7 @@
 				E61E61541B7AE17600498AC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E61E61551B7AE17600498AC2 /* Build configuration list for PBXNativeTarget "example01Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +421,7 @@
 				E61E61571B7AE17600498AC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

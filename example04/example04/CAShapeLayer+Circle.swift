@@ -23,7 +23,7 @@ extension CAShapeLayer {
      * 
      * @return CAShapeLayer
      */
-    class func instance(#circleCenter:CGPoint, radius:CGFloat, startAngle:CGFloat, endAngle:CGFloat, clockwise:Bool, lineDashPattern:[NSNumber]) -> CAShapeLayer {
+    class func instance(circleCenter:CGPoint, radius:CGFloat, startAngle:CGFloat, endAngle:CGFloat, clockwise:Bool, lineDashPattern:[NSNumber]) -> CAShapeLayer {
         
         let layer = CAShapeLayer()
         
@@ -54,7 +54,7 @@ extension CAShapeLayer {
      *
      * @return CAShapeLayer
      */
-    class func instance(#circleCenter:CGPoint, radius:CGFloat, startAngle:CGFloat, endAngle:CGFloat, clockwise:Bool) -> CAShapeLayer {
+    class func instance(circleCenter:CGPoint, radius:CGFloat, startAngle:CGFloat, endAngle:CGFloat, clockwise:Bool) -> CAShapeLayer {
         
         let layer = CAShapeLayer()
         

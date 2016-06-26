@@ -19,7 +19,7 @@ class FadeLabel: UILabel {
     }
 
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         
         setup()
     }
@@ -43,14 +43,18 @@ class FadeLabel: UILabel {
         mask.layer.addSublayer(gradientLayer)
         
         // 设置mask
-        self.maskView = mask
+        if #available(iOS 8.0, *) {
+            self.maskView = mask
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     // MARK: -
     
     func animate() {
         
-        UIView.animateWithDuration(1, delay: 2, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+        UIView.animateWithDuration(1, delay: 2, options: [UIViewAnimationOptions.CurveLinear , UIViewAnimationOptions.Repeat , UIViewAnimationOptions.Autoreverse], animations: { () -> Void in
             
             self.mask.x += self.bounds.size.width
         }) { (finished) -> Void in

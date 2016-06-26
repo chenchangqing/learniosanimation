@@ -186,6 +186,7 @@
 		E61408221B7C8C2A0090B4BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = com.chenchangqing;
 				TargetAttributes = {

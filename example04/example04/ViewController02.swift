@@ -66,7 +66,7 @@ class ViewController02: UIViewController {
         let startAngle          = CGFloat( (M_PI * 0  ) ) / 180
         let endAngle            = CGFloat( (M_PI * 360) ) / 180
         
-        dashCircleLayer = CAShapeLayer.instance(circleCenter: CGPointMake(radius, radius), radius: radius - 8, startAngle: startAngle, endAngle: endAngle, clockwise: true, lineDashPattern: [10,10])
+        dashCircleLayer = CAShapeLayer.instance(CGPointMake(radius, radius), radius: radius - 8, startAngle: startAngle, endAngle: endAngle, clockwise: true, lineDashPattern: [10,10])
         
         dashCircleLayer.strokeColor = UIColor.blackColor().CGColor // 边缘线的颜色
         dashCircleLayer.lineCap     = kCALineCapSquare             // 边缘线的类型

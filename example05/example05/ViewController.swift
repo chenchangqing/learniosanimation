@@ -92,7 +92,11 @@ class ViewController: UIViewController {
         resultImageView.image       = UIImage(named: "base")
         let mask                    = UIImageView(frame: CGRectMake(0, 0, 150, 150))
         mask.image                  = UIImage(named: "mask")
-        resultImageView.maskView    = mask
+        if #available(iOS 8.0, *) {
+            resultImageView.maskView    = mask
+        } else {
+            // Fallback on earlier versions
+        }
         containerView.addSubview(resultImageView)
     }
     
@@ -126,7 +130,11 @@ class ViewController: UIViewController {
         maskView.layer.addSublayer(layer)
         
         // 给底图设置maskView
-        baseImageView2.maskView = maskView
+        if #available(iOS 8.0, *) {
+            baseImageView2.maskView = maskView
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     /**
@@ -153,7 +161,11 @@ class ViewController: UIViewController {
         
         // maskView
         maskView3 = UIView(frame: frontImageView.bounds)
-        frontImageView.maskView = maskView3
+        if #available(iOS 8.0, *) {
+            frontImageView.maskView = maskView3
+        } else {
+            // Fallback on earlier versions
+        }
         
         // alpha图片01
         imageOne = UIImageView(frame: CGRectMake(0, 0, 100, 400))
@@ -190,7 +202,7 @@ class ViewController: UIViewController {
         frame.origin.x -= 150
         maskView.frame = frame
         
-        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+        UIView.animateWithDuration(1, delay: 0, options: [UIViewAnimationOptions.CurveLinear , UIViewAnimationOptions.Repeat , UIViewAnimationOptions.Autoreverse], animations: { () -> Void in
             
             var frame = self.maskView.frame
             frame.origin.x += 300
@@ -205,7 +217,7 @@ class ViewController: UIViewController {
      */
     private func performAnimation2() {
         
-        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveLinear | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+        UIView.animateWithDuration(1, delay: 0, options: [UIViewAnimationOptions.CurveLinear , UIViewAnimationOptions.Repeat , UIViewAnimationOptions.Autoreverse], animations: { () -> Void in
             
             self.imageOne.y -= 400
             self.imageTwo.y += 400
